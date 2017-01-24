@@ -37,9 +37,7 @@ Under _collections_ folder, create **employee.jsx** :
 // Declare our collection
 import { Mongo } from 'meteor/mongo';
 
-const Employees = new Mongo.Collection('employees');
-
-export default Employees;
+export const Employees = new Mongo.Collection('employees');
 ```
 
 ### Generating data with Faker
@@ -73,4 +71,32 @@ Meteor.startup(() => {
         });
     }
 });
+```
+
+### Create Boilerplate of Employee List
+Create _components_ folder under _client_ folder. Under _components_ folder create **employee_list.jsx** :
+```javascript
+import React from 'react';
+
+const EmployeeList = () => {
+    return (
+        <div>
+            <div className="employee-list">
+                Employee List
+            </div>
+        </div>
+    );
+};
+
+export default EmployeeList;
+```
+Change **main.jsx** on _client_ folder :
+```javascript
+import EmployeeList from './components/employee_list';
+
+const App = () => {
+    return (
+        <div>
+            <EmployeeList />
+        </div>
 ```
