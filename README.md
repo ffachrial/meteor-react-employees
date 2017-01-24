@@ -1,8 +1,7 @@
-## Create Employee Directory
+## Employee Directory
 
-### App Boilerplate
-Delete _client_ and _server_ folder.
-Create _client_ folder.
+### Create App Boilerplate
+Delete _client_ and _server_ folder. Create new _client_ folder.
 Under _client_ folder, create **main.html** :
 ```html
 <head>
