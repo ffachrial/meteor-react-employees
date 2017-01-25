@@ -1,7 +1,7 @@
 // Only executed on the server
 import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
-import { Employees } from '../imports/collections/employee';
+import { Employees } from '../imports/collections/employees';
 import { image, helpers } from 'faker';
 
 Meteor.startup(() => {
@@ -21,4 +21,8 @@ Meteor.startup(() => {
             });
         });
     }
+
+    Meteor.publish('employees', function() {
+        return Employees.find({}, { limit: 20 });
+    });
 });

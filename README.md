@@ -100,3 +100,25 @@ const App = () => {
             <EmployeeList />
         </div>
 ```
+
+### Publications and Subscriptions
+Remove autopublish :
+```bash
+meteor remove autopublish
+```
+Change main.jsx under _server_ folder :
+```javascript
+    Meteor.publish('employees', function() {
+        return Employees.find({}, { limit: 20 });
+    });
+```
+
+### Creating a container
+Install react-addon :
+```bash
+npm install --save react-addons-pure-render-mixin
+```
+Add react meteor data, React mixin for reactively tracking Meteor data :
+```bash
+meteor add react-meteor-data
+```
